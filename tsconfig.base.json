@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@buhler/core/app-layout": ["libs/core/app-layout/src/index.ts"],
+      "@buhler/core/common-store": ["libs/core/common-store/src/index.ts"],
       "@buhler/core/configuration": ["libs/core/configuration/src/index.ts"],
       "@buhler/core/ui": ["libs/core/ui/src/index.ts"],
       "@buhler/logs/features": ["libs/logs/features/src/index.ts"],

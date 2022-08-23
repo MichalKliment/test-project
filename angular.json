@@ -5,6 +5,7 @@
     "bagging": "apps/bagging",
     "bagging-e2e": "apps/bagging-e2e",
     "core-app-layout": "libs/core/app-layout",
+    "core-common-store": "libs/core/common-store",
     "core-configuration": "libs/core/configuration",
     "core-ui": "libs/core/ui",
     "logs-features": "libs/logs/features",
