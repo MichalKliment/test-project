@@ -14,7 +14,15 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@buhler/core/app-layout": ["libs/core/app-layout/src/index.ts"],
+      "@buhler/core/configuration": ["libs/core/configuration/src/index.ts"],
+      "@buhler/core/ui": ["libs/core/ui/src/index.ts"],
+      "@buhler/logs/features": ["libs/logs/features/src/index.ts"],
+      "@buhler/logs/ui": ["libs/logs/ui/src/index.ts"],
+      "@buhler/machines/features": ["libs/machines/features/src/index.ts"],
+      "@buhler/machines/ui": ["libs/machines/ui/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

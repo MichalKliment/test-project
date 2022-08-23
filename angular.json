@@ -3,6 +3,13 @@
   "version": 2,
   "projects": {
     "bagging": "apps/bagging",
-    "bagging-e2e": "apps/bagging-e2e"
+    "bagging-e2e": "apps/bagging-e2e",
+    "core-app-layout": "libs/core/app-layout",
+    "core-configuration": "libs/core/configuration",
+    "core-ui": "libs/core/ui",
+    "logs-features": "libs/logs/features",
+    "logs-ui": "libs/logs/ui",
+    "machines-features": "libs/machines/features",
+    "machines-ui": "libs/machines/ui"
   }
 }

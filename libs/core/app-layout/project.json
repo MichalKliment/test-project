@@ -1,0 +1,25 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/core/app-layout/src",
+  "prefix": "buhler",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/core/app-layout"],
+      "options": {
+        "jestConfig": "libs/core/app-layout/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/core/app-layout/**/*.ts",
+          "libs/core/app-layout/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}

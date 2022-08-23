@@ -1,0 +1,25 @@
+{
+  "projectType": "library",
+  "sourceRoot": "libs/machines/ui/src",
+  "prefix": "buhler",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/machines/ui"],
+      "options": {
+        "jestConfig": "libs/machines/ui/jest.config.ts",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/machines/ui/**/*.ts",
+          "libs/machines/ui/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
