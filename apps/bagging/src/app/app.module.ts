@@ -12,14 +12,17 @@ import { rootReducers } from '@buhler/core/common-store';
 import {
   NavigationActionTiming,
   RouterState,
-  StoreRouterConnectingModule
+  StoreRouterConnectingModule,
 } from '@ngrx/router-store';
 import { AppRoutingModule } from './app.module.routing';
 
 import { CoreAppLayoutModule } from '@buhler/core/app-layout';
 import { ActualTimeModule, TopBarModule } from '@buhler/core/ui';
 import { MachinesDomainModule } from '@buhler/machines/domain';
-import { LogGeneratorModule } from '@buhler/machines/features';
+import {
+  LogGeneratorModule,
+  MachinesTabsModule,
+} from '@buhler/machines/features';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { ButtonModule } from 'primeng/button';
 
@@ -53,6 +56,7 @@ import { ButtonModule } from 'primeng/button';
     TopBarModule,
     ButtonModule,
     ActualTimeModule,
+    MachinesTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

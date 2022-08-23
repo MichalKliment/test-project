@@ -3,20 +3,25 @@ import { Directive, ElementRef, Input } from '@angular/core';
 @Directive({ selector: '[buhlerMachineStateColor]' })
 export class MachineStateDirective {
   @Input() set state(value: 'Running' | 'Alarm' | 'Warning') {
-    let color = '#dcdcdc';
+    let bgColor = '#dcdcdc';
+    let txtColor = '#dcdcdc';
     switch (value) {
       case 'Running':
-        color = '#dcdcdc';
+        bgColor = '#dcdcdc';
+        txtColor = 'inherit';
         break;
       case 'Alarm':
-        color = '#fe333b';
+        bgColor = '#fe333b';
+        txtColor = '#FFF';
         break;
       case 'Warning':
-        color = '#ff9705';
+        bgColor = '#ff9705';
+        txtColor = '#FFF';
         break;
     }
 
-    this.el.nativeElement.style.backgroundColor = color;
+    this.el.nativeElement.style.backgroundColor = bgColor;
+    this.el.nativeElement.style.color = txtColor;
   }
 
   constructor(private el: ElementRef) {}

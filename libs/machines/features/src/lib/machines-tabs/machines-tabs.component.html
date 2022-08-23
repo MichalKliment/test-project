@@ -1,8 +1,17 @@
-<div *ngFor="let item of machinesDiagramStore.machines$ | ngrxPush">
-  <buhler-machine-card
-    [id]="item.id"
-    [name]="item.name"
-    [state]="item.state"
-    [type]="item.type"
-  ></buhler-machine-card>
+<div class="flex flex-wrap items-center">
+  <ng-container
+    *ngFor="
+      let item of machinesDiagramStore.machines$ | ngrxPush;
+      let last = last
+    "
+  >
+    <div class="cursor-pointer" (click)="machineClicked.emit(item.id)">
+      <buhler-machine-tab
+        [id]="item.id"
+        [name]="item.name"
+        [state]="item.state"
+        [type]="item.type"
+      ></buhler-machine-tab>
+    </div>
+  </ng-container>
 </div>

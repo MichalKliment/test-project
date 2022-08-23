@@ -1,2 +1,8 @@
-<span class="material-icons inline-icon px-2 text-2xl"> schedule </span>
-{{ actualTime$ | async | date: 'medium' }}
+<div class="flex items-center ">
+  <div>
+    <span class="material-icons inline-icon px-2 text-2xl"> schedule </span>
+  </div>
+  <div>
+    {{ actualTime$ | async | date: 'medium' }}
+  </div>
+</div>

@@ -10,7 +10,7 @@ export class DashboardPageComponent {
     private readonly router: Router,
     private readonly activatedRoute: ActivatedRoute
   ) {}
-  
+
   navigateToDetail(id: string) {
     console.log(id);
     this.router.navigate(['..', 'machines', id], {

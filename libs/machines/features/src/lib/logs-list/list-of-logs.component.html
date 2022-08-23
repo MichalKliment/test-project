@@ -1,4 +1,10 @@
-<div *ngFor="let item of listOfLogsStore.logs$ | ngrxPush">
-  {{ item.createdAt }}
-  {{ item.message }}
+<div *ngIf="listOfLogsStore.logs$ | ngrxPush as logs" class="pt-4 block">
+  <p-timeline [value]="logs">
+    <ng-template pTemplate="content" let-event>
+      <small class="p-text-secondary block">{{
+        event.createdAt | date: 'medium'
+      }}</small>
+      {{ event.message }}
+    </ng-template>
+  </p-timeline>
 </div>

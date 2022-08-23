@@ -1,20 +1,20 @@
 <div class="app-layout">
   <ng-container *ngIf="appLayoutPortalService.topBar$ | async as tobBar">
-    <div class="app-layout__topbar">
-      <ng-template [cdkPortalOutlet]="tobBar"></ng-template>
+    <div class="bg-gray-300 border-b-8 border-b-buhler px-6 w-full">
+      <div class="max-w-screen-lg m-auto">
+        <ng-template [cdkPortalOutlet]="tobBar"></ng-template>
+      </div>
     </div>
   </ng-container>
   <ng-container *ngIf="appLayoutPortalService.tabs$ | async as tabs">
-    <div class="app-layout__tabs">
-      =
-      <ng-template [cdkPortalOutlet]="tabs"></ng-template>
+    <div class="bg-gray-300 px-6 w-fulls">
+      <div class="max-w-screen-lg m-auto">
+        <ng-template [cdkPortalOutlet]="tabs"></ng-template>
+      </div>
     </div>
   </ng-container>
-  <div
-    class="app-layout__main"
-    [class.pt-16]="appLayoutPortalService.topBar$ | async"
-  >
-    <main class="block max-w-screen-lg m-auto">
+  <div class="px-6">
+    <main class="block max-w-screen-lg m-auto pt-8">
       <router-outlet></router-outlet>
       <ng-container *ngIf="appLayoutPortalService.main$ | async as main">
         <ng-template [cdkPortalOutlet]="main"></ng-template>

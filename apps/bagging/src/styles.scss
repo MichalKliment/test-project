@@ -9,29 +9,33 @@
 }
 
 @layer components {
-  .app-layout {
-    &__topbar {
-      @apply fixed w-full top-0 left-0 p-2 flex h-20;
-    }
-    &__sidebar {
-      @apply fixed h-full top-0 left-0 p-2 flex w-72 pt-20;
-    }
-    &__main {
-      @apply relative;
-      &--with-sidebar {
-        @apply pl-72;
-      }
-      &--with-topbar {
-        @apply pt-20;
-      }
-    }
-  }
-  main {
-    @apply relative block p-8;
-  }
+  // .app-layout {
+  //   &__topbar {
+  //     @apply fixed w-full top-0 left-0 p-2 flex h-20;
+  //   }
+  //   &__sidebar {
+  //     @apply fixed h-full top-0 left-0 p-2 flex w-72 pt-20;
+  //   }
+  //   &__main {
+  //     @apply relative;
+  //     &--with-sidebar {
+  //       @apply pl-72;
+  //     }
+  //     &--with-topbar {
+  //       @apply pt-20;
+  //     }
+  //   }
+  // }
+  // main {
+  //   @apply relative block p-8;
+  // }
 }
 
 @layer utilities {
+}
+
+.p-timeline-event-opposite {
+  display: none;
 }
 
 .material-icons {

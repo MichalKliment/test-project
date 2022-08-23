@@ -8,18 +8,25 @@
       </div>
       <div>
         <!-- should be another module -->
-        <span class="material-icons inline-icon px-2 text-2xl">
-          account_circle
-        </span>
-        <span> Demo User </span>
+        <div class="flex items-center">
+          <div>
+            <span class="material-icons inline-icon px-2 text-2xl">
+              account_circle
+            </span>
+          </div>
+          <div>
+            <span> Demo User </span>
+          </div>
+        </div>
       </div>
     </div>
   </buhler-top-bar>
 </buhler-layout-host>
 <buhler-layout-host portal="tabs">
-  <buhler-log-generator></buhler-log-generator>
+  <buhler-machines-tabs
+    (machineClicked)="navigateToDetail($event)"
+  ></buhler-machines-tabs>
 </buhler-layout-host>
-
 <buhler-layout-host portal="main">
   <buhler-log-generator></buhler-log-generator>
 </buhler-layout-host>

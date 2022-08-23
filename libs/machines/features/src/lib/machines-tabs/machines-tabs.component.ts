@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { MachinesTabsStore } from './machines-tabs.store';
 
 @Component({
@@ -7,5 +7,6 @@ import { MachinesTabsStore } from './machines-tabs.store';
   providers: [MachinesTabsStore],
 })
 export class MachinesTabsComponent {
+  @Output() machineClicked = new EventEmitter<string>();
   constructor(public machinesDiagramStore: MachinesTabsStore) {}
 }

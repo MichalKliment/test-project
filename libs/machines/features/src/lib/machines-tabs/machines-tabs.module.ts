@@ -2,11 +2,13 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveComponentModule } from '@ngrx/component';
 
-import { MachineCardModule } from '@buhler/machines/ui';
+import {
+  MachineTabModule
+} from '@buhler/machines/ui';
 import { MachinesTabsComponent } from './machines-tabs.component';
 
 @NgModule({
-  imports: [CommonModule, ReactiveComponentModule, MachineCardModule],
+  imports: [CommonModule, ReactiveComponentModule, MachineTabModule],
   exports: [MachinesTabsComponent],
   declarations: [MachinesTabsComponent],
   providers: [],

@@ -1,7 +1,24 @@
 <buhler-title
   title="Machine Detail: {{ machineDetailPageStore.machineId$ | ngrxPush }}"
 >
-  <button pButton [label]="'Back'" [routerLink]="['/', 'machines']"></button>
+  <div class="flex gap-2">
+    <div>
+      <button
+        pButton
+        [label]="'Restart'"
+        (click)="machineDetailPageStore.restartMachine()"
+        class="p-button-warning p-button-sm"
+      ></button>
+    </div>
+    <div>
+      <button
+        pButton
+        [label]="'Back'"
+        [routerLink]="['/', 'machines']"
+        class="p-button-sm"
+      ></button>
+    </div>
+  </div>
 </buhler-title>
 
 <buhler-list-of-logs [machineId]="machineDetailPageStore.machineId$ | ngrxPush">
