@@ -2,22 +2,24 @@ import { NgModule } from '@angular/core';
 
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from './app.component';
 import { CoreConfigurationModule } from '@buhler/core/configuration';
-import { environment } from '../environments/environment';
-import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
+import { environment } from '../environments/environment';
+import { AppComponent } from './app.component';
 
 import { rootReducers } from '@buhler/core/common-store';
 import {
   NavigationActionTiming,
   RouterState,
-  StoreRouterConnectingModule,
+  StoreRouterConnectingModule
 } from '@ngrx/router-store';
 import { AppRoutingModule } from './app.module.routing';
 
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { CoreAppLayoutModule } from '@buhler/core/app-layout';
+import { MachinesDomainModule } from '@buhler/machines/domain';
+import { LogGeneratorModule } from '@buhler/machines/features';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [AppComponent],
@@ -44,6 +46,8 @@ import { CoreAppLayoutModule } from '@buhler/core/app-layout';
       autoPause: true,
     }),
     CoreAppLayoutModule,
+    MachinesDomainModule,
+    LogGeneratorModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

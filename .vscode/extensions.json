@@ -1,9 +1,25 @@
 {
   "recommendations": [
-    "angular.ng-template",
     "nrwl.angular-console",
+    "angular.ng-template",
     "esbenp.prettier-vscode",
     "firsttris.vscode-jest-runner",
-    "dbaeumer.vscode-eslint"
+    "dbaeumer.vscode-eslint",
+    "graphql.vscode-graphql",
+    "ms-vsliveshare.vsliveshare",
+    "pkief.material-icon-theme",
+    "ms-azuretools.vscode-docker",
+    "codestream.codestream",
+    "streetsidesoftware.code-spell-checker",
+    "streetsidesoftware.code-spell-checker-czech",
+    "hediet.vscode-drawio",
+    "johnpapa.Angular2",
+    "webben.browserslist",
+    "RedVanWorkshop.explorer-exclude-vscode-extension",
+    "bierner.folder-source-actions",
+    "bradlc.vscode-tailwindcss",
+    "mrmlnc.vscode-scss",
+    "sibiraj-s.vscode-scss-formatter",
+    "bierner.lit-html"
   ]
 }

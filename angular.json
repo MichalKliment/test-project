@@ -8,9 +8,9 @@
     "core-common-store": "libs/core/common-store",
     "core-configuration": "libs/core/configuration",
     "core-ui": "libs/core/ui",
-    "logs-features": "libs/logs/features",
-    "logs-ui": "libs/logs/ui",
+    "machines-domain": "libs/machines/domain",
     "machines-features": "libs/machines/features",
-    "machines-ui": "libs/machines/ui"
+    "machines-ui": "libs/machines/ui",
+    "machines-utils": "libs/machines/utils"
   }
 }

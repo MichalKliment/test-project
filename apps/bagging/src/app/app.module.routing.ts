@@ -20,6 +20,13 @@ import { AppGuard } from '@buhler/core/configuration';
                   ({ DashboardModule }) => DashboardModule
                 ),
             },
+            {
+              path: 'machines',
+              loadChildren: () =>
+                import('./features/machines').then(
+                  ({ MachinesModule }) => MachinesModule
+                ),
+            },
           ],
         },
       ],

@@ -1,1 +1,1 @@
-export * from './lib/machines-ui.module';
+export * from './lib';

@@ -19,10 +19,10 @@
       "@buhler/core/common-store": ["libs/core/common-store/src/index.ts"],
       "@buhler/core/configuration": ["libs/core/configuration/src/index.ts"],
       "@buhler/core/ui": ["libs/core/ui/src/index.ts"],
-      "@buhler/logs/features": ["libs/logs/features/src/index.ts"],
-      "@buhler/logs/ui": ["libs/logs/ui/src/index.ts"],
+      "@buhler/machines/domain": ["libs/machines/domain/src/index.ts"],
       "@buhler/machines/features": ["libs/machines/features/src/index.ts"],
-      "@buhler/machines/ui": ["libs/machines/ui/src/index.ts"]
+      "@buhler/machines/ui": ["libs/machines/ui/src/index.ts"],
+      "@buhler/machines/utils": ["libs/machines/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
