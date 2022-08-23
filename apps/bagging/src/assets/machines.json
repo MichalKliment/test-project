@@ -1,0 +1,26 @@
+[
+  {
+    "id": "machine1",
+    "name": "Machine 1",
+    "type": "Scale",
+    "state": "Running"
+  },
+  {
+    "id": "machine2",
+    "name": "Machine 2",
+    "type": "Bag Attach",
+    "state": "Running"
+  },
+  {
+    "id": "machine3",
+    "name": "Machine 3",
+    "type": "Packer",
+    "state": "Running"
+  },
+  {
+    "id": "machine4",
+    "name": "Machine 4",
+    "type": "Bag Close",
+    "state": "Running"
+  }
+]

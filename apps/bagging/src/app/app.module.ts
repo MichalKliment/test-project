@@ -12,7 +12,7 @@ import { rootReducers } from '@buhler/core/common-store';
 import {
   NavigationActionTiming,
   RouterState,
-  StoreRouterConnectingModule,
+  StoreRouterConnectingModule
 } from '@ngrx/router-store';
 import { AppRoutingModule } from './app.module.routing';
 
@@ -21,7 +21,7 @@ import { ActualTimeModule, TopBarModule } from '@buhler/core/ui';
 import { MachinesDomainModule } from '@buhler/machines/domain';
 import {
   LogGeneratorModule,
-  MachinesTabsModule,
+  MachinesTabsModule
 } from '@buhler/machines/features';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { ButtonModule } from 'primeng/button';
@@ -46,9 +46,9 @@ import { ButtonModule } from 'primeng/button';
       navigationActionTiming: NavigationActionTiming.PreActivation,
     }),
     StoreDevtoolsModule.instrument({
-      maxAge: 25, // Retains last 25 states
-      logOnly: environment.production, // Restrict extension to log-only mode
-      autoPause: true,
+      // maxAge: 25, // Retains last 25 states
+      // logOnly: environment.production, // Restrict extension to log-only mode
+      // autoPause: true,
     }),
     CoreAppLayoutModule,
     MachinesDomainModule,

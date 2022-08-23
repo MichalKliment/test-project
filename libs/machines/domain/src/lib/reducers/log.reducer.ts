@@ -4,9 +4,11 @@ import { Action, createReducer, on } from '@ngrx/store';
 import { LogsActions } from '../actions';
 import { Log } from '../models';
 
+import { nanoid } from 'nanoid';
 export interface LogsStoreState extends EntityState<Log> {
   loaded: boolean;
   loading: boolean;
+  logCount: number;
 }
 
 const adapter: EntityAdapter<Log> = createEntityAdapter<Log>();
@@ -14,13 +16,25 @@ const adapter: EntityAdapter<Log> = createEntityAdapter<Log>();
 const initialState: LogsStoreState = adapter.getInitialState({
   loading: false,
   loaded: false,
+  logCount: 100,
 });
 
 export const logsReducer = createReducer(
   initialState,
   on(LogsActions.addLog, (state, { log }) =>
-    adapter.addOne(
-      { ...log, id: Object.keys(state.entities).length + 1 },
+    /**
+     * Add Log with generated id and remove oldest log if logCount is reached
+     */
+    adapter.setAll(
+      [
+        ...Object.keys(state.entities)
+          .map((key) => state.entities[key] as Log)
+          .slice(-state.logCount),
+        {
+          ...log,
+          id: nanoid(),
+        },
+      ],
       {
         ...state,
       }

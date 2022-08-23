@@ -1,25 +1,4 @@
 {
   "base": "",
-  "machines": [
-    {
-      "id": "machine1",
-      "name": "Machine 1",
-      "type": "Scale"
-    },
-    {
-      "id": "machine2",
-      "name": "Machine 2",
-      "type": "Bag Attach"
-    },
-    {
-      "id": "machine3",
-      "name": "Machine 3",
-      "type": "Packer"
-    },
-    {
-      "id": "machine4",
-      "name": "Machine 4",
-      "type": "Bag Close"
-    }
-  ]
+
 }

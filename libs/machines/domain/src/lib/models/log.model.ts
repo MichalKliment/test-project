@@ -1,7 +1,7 @@
 import { MachineState } from './machine-state.model';
 
 export type Log = {
-  id?: number;
+  id?: string;
   createdAt: string;
   state: MachineState;
   machineId: string;
