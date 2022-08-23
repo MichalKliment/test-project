@@ -4,16 +4,19 @@
       <ng-template [cdkPortalOutlet]="tobBar"></ng-template>
     </div>
   </ng-container>
-  <ng-container *ngIf="appLayoutPortalService.sideBar$ | async as sideBar">
-    <div class="app-layout__sidebar">
-      <ng-template [cdkPortalOutlet]="sideBar"></ng-template>
+  <ng-container *ngIf="appLayoutPortalService.tabs$ | async as tabs">
+    <div class="app-layout__tabs">
+      =
+      <ng-template [cdkPortalOutlet]="tabs"></ng-template>
     </div>
   </ng-container>
-  <div class="app-layout__main" [class.app-layout__main--with-sidebar]="appLayoutPortalService.sideBar$ | async"
-    [class.app-layout__main--with-topbar]="appLayoutPortalService.topBar$ | async">
-    <main>
+  <div
+    class="app-layout__main"
+    [class.pt-16]="appLayoutPortalService.topBar$ | async"
+  >
+    <main class="block max-w-screen-lg m-auto">
       <router-outlet></router-outlet>
-      <ng-container *ngIf="appLayoutPortalService.main$ |async as main">
+      <ng-container *ngIf="appLayoutPortalService.main$ | async as main">
         <ng-template [cdkPortalOutlet]="main"></ng-template>
       </ng-container>
     </main>

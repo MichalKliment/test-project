@@ -14,7 +14,11 @@
         "tsConfig": "apps/bagging/tsconfig.app.json",
         "inlineStyleLanguage": "scss",
         "assets": ["apps/bagging/src/favicon.ico", "apps/bagging/src/assets"],
-        "styles": ["apps/bagging/src/styles.scss"],
+        "styles": [
+          "node_modules/primeng/resources/themes/saga-blue/theme.css",
+          "node_modules/primeng/resources/primeng.min.css",
+          "apps/bagging/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {

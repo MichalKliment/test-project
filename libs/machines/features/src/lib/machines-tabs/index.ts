@@ -1,2 +1,2 @@
 export * from './machines-tabs.component'
-export * from './machines-tabs.modul'
+export * from './machines-tabs.module'

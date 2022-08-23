@@ -5,15 +5,15 @@ import {
   Log,
   LogsActions,
   Machine,
-  MachineSelectors
+  MachinesSelectors
 } from '@buhler/machines/domain';
 import {
-  getRandomMachineState,
-  getRandomMachineType
+  getRandomMachineId,
+  getRandomMachineState
 } from '@buhler/machines/utils';
 import { ComponentStore } from '@ngrx/component-store';
 import { Observable } from 'rxjs';
-import { filter, tap, withLatestFrom } from 'rxjs/operators';
+import { filter, map, tap, withLatestFrom } from 'rxjs/operators';
 
 export interface LogGeneratorState {
   data: Machine[];
@@ -22,7 +22,7 @@ export interface LogGeneratorState {
 @Injectable()
 export class LogGeneratorStore extends ComponentStore<LogGeneratorState> {
   machines$: Observable<Machine[]> = this.store$.pipe(
-    select(MachineSelectors.allMachines)
+    select(MachinesSelectors.allMachines)
   );
 
   constructor(public store$: Store<never>) {
@@ -40,22 +40,23 @@ export class LogGeneratorStore extends ComponentStore<LogGeneratorState> {
     return input.pipe(
       withLatestFrom(this.machines$),
       filter(([, machines]) => machines.length > 0),
-      tap(() =>
+      map(([, machines]) => machines.map((p) => p.id)),
+      tap((machinesIds) =>
         this.store$.dispatch(
-          LogsActions.addLog({ log: this.createNewRandomLog() })
+          LogsActions.addLog({ log: this.createNewRandomLog(machinesIds) })
         )
       )
     );
   });
 
-  private createNewRandomLog(): Log {
-    const tempType = getRandomMachineType();
+  private createNewRandomLog(machines: string[]): Log {
+    const tempMachine = getRandomMachineId(machines);
     const tempState = getRandomMachineState();
     return {
       createdAt: new Date().toISOString(),
       state: tempState,
-      machine: tempType,
-      message: `Message for machine: ${tempType} and state: ${tempState}`,
+      machineId: tempMachine,
+      message: `Message for machine: ${tempMachine} and state: ${tempState}`,
     };
   }
 }

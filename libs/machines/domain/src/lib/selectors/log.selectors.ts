@@ -11,7 +11,7 @@ const loaded = createSelector(LogSelector, (s) => s.loaded);
 const loading = createSelector(LogSelector, (s) => s.loading);
 const allLogs = createSelector(LogSelector, selectAll);
 
-export const LogSelectors = {
+export const LogsSelectors = {
   loaded,
   loading,
   allLogs,

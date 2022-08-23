@@ -1,0 +1,8 @@
+<buhler-title
+  title="Machine Detail: {{ machineDetailPageStore.machineId$ | ngrxPush }}"
+>
+  <button pButton [label]="'Back'" [routerLink]="['/', 'machines']"></button>
+</buhler-title>
+
+<buhler-list-of-logs [machineId]="machineDetailPageStore.machineId$ | ngrxPush">
+</buhler-list-of-logs>

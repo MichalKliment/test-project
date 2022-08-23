@@ -8,7 +8,7 @@ const routes: Routes = [
     component: MachinesPageComponent,
   },
   {
-    path: ':id',
+    path: ':machineId',
     component: MachineDetailPageComponent,
   },
 ];

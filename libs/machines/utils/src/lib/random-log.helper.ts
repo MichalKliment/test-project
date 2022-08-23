@@ -19,14 +19,7 @@ export function getRandomMachineState(): 'Running' | 'Alarm' | 'Warning' {
  * function for getting random Type od machine
  * @returns {string} MachineType
  */
-export function getRandomMachineType():
-  | 'Scale'
-  | 'Bag Attach'
-  | 'Packer'
-  | 'Bag Close' {
-  const state = getRandomInt(0, 4);
-  if (state === 0) return 'Scale';
-  if (state === 1) return 'Bag Attach';
-  if (state === 2) return 'Packer';
-  return 'Bag Close';
+export function getRandomMachineId(ids: string[]): string {
+  const id = getRandomInt(0, ids.length);
+  return ids[id];
 }

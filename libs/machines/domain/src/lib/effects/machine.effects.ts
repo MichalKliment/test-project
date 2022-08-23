@@ -5,7 +5,7 @@ import { Store } from '@ngrx/store';
 import { map, withLatestFrom } from 'rxjs';
 import { LogsActions, MachinesActions } from '../actions';
 import { Machine } from '../models';
-import { MachineSelectors } from '../selectors';
+import { MachinesSelectors } from '../selectors';
 
 @Injectable()
 export class MachinesEffects {
@@ -80,9 +80,9 @@ export class MachinesEffects {
     () =>
       this._actions.pipe(
         ofType(LogsActions.addLog),
-        withLatestFrom(this._store$.select(MachineSelectors.allMachines)),
+        withLatestFrom(this._store$.select(MachinesSelectors.allMachines)),
         map(([action, machines]) => {
-          const machine = machines.find((m) => m.type === action.log.machine);
+          const machine = machines.find((m) => m.id === action.log.machineId);
           if (machine) {
             return MachinesActions.changeMachineState({
               machine: {

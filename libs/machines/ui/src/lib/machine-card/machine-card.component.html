@@ -1,0 +1,9 @@
+<div buhlerMachineStateColor [state]="state" class="w-24 h-24 relative text-center p-2 pt-4">
+  <div class="absolute top-1 right-1">
+    <buhler-machine-state-icon [icon]="state"></buhler-machine-state-icon>
+  </div>
+  <buhler-machine-icon *ngIf="type" [icon]="type"></buhler-machine-icon>
+  <h3>
+    {{ type }}
+  </h3>
+</div>

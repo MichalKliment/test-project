@@ -19,9 +19,12 @@ const initialState: LogsStoreState = adapter.getInitialState({
 export const logsReducer = createReducer(
   initialState,
   on(LogsActions.addLog, (state, { log }) =>
-    adapter.addOne(log, {
-      ...state,
-    })
+    adapter.addOne(
+      { ...log, id: Object.keys(state.entities).length + 1 },
+      {
+        ...state,
+      }
+    )
   )
 );
 
@@ -30,5 +33,5 @@ export function reducer(state: LogsStoreState | undefined, action: Action) {
 }
 export const selectState = (state: LogsStoreState) => state;
 
-export const { selectIds, selectEntities, selectAll, selectTotal } =
+export const { selectEntities, selectAll, selectTotal } =
   adapter.getSelectors();

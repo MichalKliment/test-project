@@ -1,3 +1,25 @@
 <router-outlet></router-outlet>
 
-<buhler-log-generator></buhler-log-generator>
+<buhler-layout-host portal="topBar">
+  <buhler-top-bar>
+    <div class="flex gap-9 items-center">
+      <div>
+        <buhler-actual-time></buhler-actual-time>
+      </div>
+      <div>
+        <!-- should be another module -->
+        <span class="material-icons inline-icon px-2 text-2xl">
+          account_circle
+        </span>
+        <span> Demo User </span>
+      </div>
+    </div>
+  </buhler-top-bar>
+</buhler-layout-host>
+<buhler-layout-host portal="tabs">
+  <buhler-log-generator></buhler-log-generator>
+</buhler-layout-host>
+
+<buhler-layout-host portal="main">
+  <buhler-log-generator></buhler-log-generator>
+</buhler-layout-host>

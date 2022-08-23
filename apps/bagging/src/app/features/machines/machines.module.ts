@@ -1,6 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { TitleModule } from '@buhler/core/ui';
+import {
+  ListOfLogsModule,
+  MachinesDiagramModule
+} from '@buhler/machines/features';
 import { ReactiveComponentModule } from '@ngrx/component';
 
 import { ButtonModule } from 'primeng/button';
@@ -19,6 +24,9 @@ import { MACHINES_PAGES } from './pages';
     ButtonModule,
     CardModule,
     MachinesRoutingModule,
+    MachinesDiagramModule,
+    ListOfLogsModule,
+    TitleModule,
   ],
   exports: [],
   declarations: [...MACHINES_PAGES, ...MACHINES_COMPONENTS],

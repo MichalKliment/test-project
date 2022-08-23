@@ -1,0 +1,4 @@
+<div *ngFor="let item of listOfLogsStore.logs$ | ngrxPush">
+  {{ item.createdAt }}
+  {{ item.message }}
+</div>

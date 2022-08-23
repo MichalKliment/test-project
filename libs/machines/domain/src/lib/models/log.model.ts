@@ -1,10 +1,9 @@
 import { MachineState } from './machine-state.model';
-import { MachineType } from './machine-type.model';
 
 export type Log = {
+  id?: number;
   createdAt: string;
   state: MachineState;
-  machine: MachineType;
-  // id: string;
+  machineId: string;
   message: string;
 };

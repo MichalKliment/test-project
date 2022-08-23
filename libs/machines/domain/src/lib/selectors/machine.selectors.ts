@@ -11,7 +11,7 @@ const loaded = createSelector(MachineSelector, (s) => s.loaded);
 const loading = createSelector(MachineSelector, (s) => s.loading);
 const allMachines = createSelector(MachineSelector, selectAll);
 
-export const MachineSelectors = {
+export const MachinesSelectors = {
   loaded,
   loading,
   allMachines,

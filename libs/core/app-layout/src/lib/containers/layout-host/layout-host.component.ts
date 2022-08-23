@@ -11,7 +11,7 @@ import { AppLayoutPortalService } from '../../services';
 import { TemplatePortal } from '@angular/cdk/portal';
 
 @Component({
-  selector: 'ral-layout-host',
+  selector: 'buhler-layout-host',
   templateUrl: 'layout-host.component.html',
 })
 export class LayoutHostComponent implements OnInit {

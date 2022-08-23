@@ -1,8 +1,12 @@
 import { Component } from '@angular/core';
+import { MachineDetailPageStore } from './machine-detail-page.store';
 
 @Component({
   selector: 'buhler-machine-detail-page',
   templateUrl: 'machine-detail-page.component.html',
-  styleUrls: ['./machine-detail-page.component.scss'],
+
+  providers: [MachineDetailPageStore],
 })
-export class MachineDetailPageComponent {}
+export class MachineDetailPageComponent {
+  constructor(public machineDetailPageStore: MachineDetailPageStore) {}
+}

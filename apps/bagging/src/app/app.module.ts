@@ -17,9 +17,11 @@ import {
 import { AppRoutingModule } from './app.module.routing';
 
 import { CoreAppLayoutModule } from '@buhler/core/app-layout';
+import { ActualTimeModule, TopBarModule } from '@buhler/core/ui';
 import { MachinesDomainModule } from '@buhler/machines/domain';
 import { LogGeneratorModule } from '@buhler/machines/features';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [AppComponent],
@@ -48,6 +50,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     CoreAppLayoutModule,
     MachinesDomainModule,
     LogGeneratorModule,
+    TopBarModule,
+    ButtonModule,
+    ActualTimeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

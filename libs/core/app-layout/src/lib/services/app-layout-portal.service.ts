@@ -1,7 +1,7 @@
 import {
   ComponentPortal,
   DomPortal,
-  TemplatePortal,
+  TemplatePortal
 } from '@angular/cdk/portal';
 import { Injectable } from '@angular/core';
 import { LayoutPortalEnum } from '../model';
@@ -12,24 +12,19 @@ export type Portal = TemplatePortal | ComponentPortal<unknown> | DomPortal;
 
 @Injectable({ providedIn: 'root' })
 export class AppLayoutPortalService {
-  private sideBar = new BehaviorSubject<Portal | null>(null);
-  private sideBarLogo = new BehaviorSubject<Portal | null>(null);
+  private tabs = new BehaviorSubject<Portal | null>(null);
   private topBar = new BehaviorSubject<Portal | null>(null);
   private main = new BehaviorSubject<Portal | null>(null);
 
-  public readonly sideBar$ = this.sideBar.asObservable();
-  public readonly sideBarLogo$ = this.sideBarLogo.asObservable();
+  public readonly tabs$ = this.tabs.asObservable();
   public readonly topBar$ = this.topBar.asObservable();
   public readonly main$ = this.main.asObservable();
 
-  setSideBar(portal: Portal) {
-    if (this.sideBar.value?.isAttached) this.sideBar.value.detach();
-    this.sideBar.next(portal);
+  settTabs(portal: Portal) {
+    if (this.tabs.value?.isAttached) this.tabs.value.detach();
+    this.tabs.next(portal);
   }
-  setSideBarLogo(portal: Portal) {
-    if (this.sideBarLogo.value?.isAttached) this.sideBarLogo.value.detach();
-    this.sideBarLogo.next(portal);
-  }
+
   setTopBar(portal: Portal) {
     if (this.topBar.value?.isAttached) this.topBar.value.detach();
     this.topBar.next(portal);
@@ -41,8 +36,8 @@ export class AppLayoutPortalService {
 
   setPortal(portal: Portal, portalType: LayoutPortalEnum) {
     switch (portalType) {
-      case 'sideBar':
-        this.setSideBar(portal);
+      case 'tabs':
+        this.settTabs(portal);
         break;
       case 'topBar':
         this.setTopBar(portal);
