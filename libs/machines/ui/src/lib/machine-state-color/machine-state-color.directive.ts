@@ -1,8 +1,9 @@
 import { Directive, ElementRef, Input } from '@angular/core';
+import { MachineState } from '@buhler/machines/utils';
 
 @Directive({ selector: '[buhlerMachineStateColor]' })
 export class MachineStateDirective {
-  @Input() set state(value: 'Running' | 'Alarm' | 'Warning') {
+  @Input() set state(value: MachineState) {
     let bgColor = '#dcdcdc';
     let txtColor = '#dcdcdc';
     switch (value) {

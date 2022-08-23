@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Machine } from '@buhler/machines/utils';
 import { Observable } from 'rxjs';
-import { Machine } from '../models';
 
 @Injectable({ providedIn: 'root' })
 export class MachineDataService {

@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { MachineState } from '@buhler/machines/utils';
 
 @Component({
   selector: 'buhler-machine-state-icon',
@@ -7,8 +8,8 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class MachineStateIconComponent {
   materialIcon = '';
-  
-  @Input() set icon(value: 'Running' | 'Alarm' | 'Warning') {
+
+  @Input() set icon(value: MachineState) {
     switch (value) {
       case 'Running':
         this.materialIcon = 'sync';

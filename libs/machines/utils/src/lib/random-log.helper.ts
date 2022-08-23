@@ -5,21 +5,10 @@ export function getRandomInt(min: number, max: number) {
 }
 
 /**
- * function for getting random State od machine
- * @returns {string} MachineState
- */
-export function getRandomMachineState(): 'Running' | 'Alarm' | 'Warning' {
-  const state = getRandomInt(0, 3);
-  if (state === 0) return 'Running';
-  if (state === 1) return 'Alarm';
-  return 'Warning';
-}
-
-/**
- * function for getting random Type od machine
+ * function for getting random item from array
  * @returns {string} MachineType
  */
-export function getRandomMachineId(ids: string[]): string {
+export function getRandomItemFromArray(ids: string[]): string {
   const id = getRandomInt(0, ids.length);
   return ids[id];
 }

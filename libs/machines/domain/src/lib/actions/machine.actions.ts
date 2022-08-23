@@ -1,6 +1,6 @@
+import { Machine } from '@buhler/machines/utils';
 import { Update } from '@ngrx/entity';
 import { createAction, props } from '@ngrx/store';
-import { Machine } from '../models';
 
 const load = createAction('[Machines] load machines');
 

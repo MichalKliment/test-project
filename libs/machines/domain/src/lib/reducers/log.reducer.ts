@@ -1,8 +1,8 @@
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 
+import { Log } from '@buhler/machines/utils';
 import { Action, createReducer, on } from '@ngrx/store';
 import { LogsActions } from '../actions';
-import { Log } from '../models';
 
 import { nanoid } from 'nanoid';
 export interface LogsStoreState extends EntityState<Log> {

@@ -1,8 +1,8 @@
 import { createEntityAdapter, EntityAdapter, EntityState } from '@ngrx/entity';
 
+import { Machine } from '@buhler/machines/utils';
 import { Action, createReducer, on } from '@ngrx/store';
 import { MachinesActions } from '../actions';
-import { Machine } from '../models';
 
 export interface MachineStoreState extends EntityState<Machine> {
   loaded: boolean;

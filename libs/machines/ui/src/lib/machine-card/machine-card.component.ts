@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { MachineState, MachineType } from '@buhler/machines/utils';
 
 @Component({
   selector: 'buhler-machine-card',
@@ -8,7 +9,6 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 export class MachineCardComponent {
   @Input() id?: string;
   @Input() name?: string;
-  @Input() state: 'Running' | 'Alarm' | 'Warning' = 'Running';
-  @Input() type?: 'Scale' | 'Bag Attach' | 'Packer' | 'Bag Close';
-
+  @Input() state: MachineState = 'Running';
+  @Input() type?: MachineType;
 }

@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { MachineType } from '@buhler/machines/utils';
 
 @Component({
   selector: 'buhler-machine-icon',
@@ -7,7 +8,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 })
 export class MachineIconComponent {
   materialIcon = '';
-  @Input() set icon(value: 'Scale' | 'Bag Attach' | 'Packer' | 'Bag Close') {
+  @Input() set icon(value: MachineType) {
     switch (value) {
       case 'Scale':
         this.materialIcon = 'system_update_alt';

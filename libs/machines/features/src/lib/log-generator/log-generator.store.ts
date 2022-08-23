@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 
+import { LogsActions, MachinesSelectors } from '@buhler/machines/domain';
 import {
+  getRandomItemFromArray,
   Log,
-  LogsActions,
   Machine,
-  MachinesSelectors
-} from '@buhler/machines/domain';
-import {
-  getRandomMachineId,
-  getRandomMachineState
+  MachineState,
+  MACHINES_STATES
 } from '@buhler/machines/utils';
 import { ComponentStore } from '@ngrx/component-store';
 import { Observable } from 'rxjs';
@@ -50,8 +48,10 @@ export class LogGeneratorStore extends ComponentStore<LogGeneratorState> {
   });
 
   private createNewRandomLog(machines: string[]): Log {
-    const tempMachine = getRandomMachineId(machines);
-    const tempState = getRandomMachineState();
+    const tempMachine = getRandomItemFromArray(machines) as string;
+    const tempState = getRandomItemFromArray(
+      JSON.parse(JSON.stringify(MACHINES_STATES))
+    ) as MachineState;
     return {
       createdAt: new Date().toISOString(),
       state: tempState,
