@@ -4,7 +4,6 @@ import { MachineDetailPageStore } from './machine-detail-page.store';
 @Component({
   selector: 'buhler-machine-detail-page',
   templateUrl: 'machine-detail-page.component.html',
-
   providers: [MachineDetailPageStore],
 })
 export class MachineDetailPageComponent {

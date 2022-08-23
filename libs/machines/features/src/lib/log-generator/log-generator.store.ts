@@ -29,11 +29,6 @@ export class LogGeneratorStore extends ComponentStore<LogGeneratorState> {
     });
   }
 
-  private readonly updateData = this.updater((state, input: Machine[]) => ({
-    ...state,
-    data: input,
-  }));
-
   readonly generateNewLog = this.effect((input: Observable<never>) => {
     return input.pipe(
       withLatestFrom(this.machines$),

@@ -1,6 +1,4 @@
-<buhler-title
-  title="Machine Detail: {{ machineDetailPageStore.machineId$ | ngrxPush }}"
->
+<buhler-title [title]="machineDetailPageStore.machineId$ | ngrxPush">
   <div class="flex gap-2">
     <div>
       <button

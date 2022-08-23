@@ -1,11 +1,11 @@
-<div class="flex flex-wrap justify-center items-center">
+<div class="flex justify-center items-center h-[calc(100vh-150px)]">
   <ng-container
     *ngFor="
       let item of machinesDiagramStore.machines$ | ngrxPush;
       let last = last
     "
   >
-    <div class="cursor-pointer" (click)="machineClicked.emit(item.id)">
+    <div class="cursor-pointer flex-shrink-0" (click)="machineClicked.emit(item.id)">
       <buhler-machine-card
         [id]="item.id"
         [name]="item.name"
@@ -13,6 +13,9 @@
         [type]="item.type"
       ></buhler-machine-card>
     </div>
-    <div *ngIf="!last" class="w-[80px] h-[5px] bg-green-500"></div>
+    <div
+      *ngIf="!last"
+      class="flex-shrink-1 w-[80px] rw-[80px] h-[5px] bg-buhler"
+    ></div>
   </ng-container>
 </div>

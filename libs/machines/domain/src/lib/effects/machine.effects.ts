@@ -26,6 +26,16 @@ export class MachinesEffects {
     { dispatch: true }
   );
 
+  // TODO: handle error state
+  // onLoadRequestFailed$ = createEffect(
+  //   () =>
+  //     this._actions.pipe(
+  //       ofType(MachinesActions.loadFailed),
+  //       map((p) => dispatchToast.....)
+  //     ),
+  //   { dispatch: true }
+  // );
+
   onLogComes$ = createEffect(
     () =>
       this._actions.pipe(
@@ -36,6 +46,9 @@ export class MachinesEffects {
         map(([action, machines]) => {
           const machine = machines.find((m) => m.id === action.log.machineId);
           if (machine) {
+            /**
+             * dispatching NGRX Entity Update<Machine>
+             */
             return MachinesActions.changeMachineState({
               machine: {
                 id: machine.id,

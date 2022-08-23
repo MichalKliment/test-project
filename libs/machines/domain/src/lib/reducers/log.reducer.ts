@@ -8,7 +8,7 @@ import { nanoid } from 'nanoid';
 export interface LogsStoreState extends EntityState<Log> {
   loaded: boolean;
   loading: boolean;
-  logCount: number;
+  logStoreLimit: number;
 }
 
 const adapter: EntityAdapter<Log> = createEntityAdapter<Log>();
@@ -16,20 +16,25 @@ const adapter: EntityAdapter<Log> = createEntityAdapter<Log>();
 const initialState: LogsStoreState = adapter.getInitialState({
   loading: false,
   loaded: false,
-  logCount: 100,
+  logStoreLimit: 100,
 });
 
 export const logsReducer = createReducer(
   initialState,
+  on(LogsActions.setCountLimit, (state, { logStoreLimit }) => ({
+    ...state,
+    logStoreLimit,
+  })),
+  /**
+   * Add Log with generated id and remove oldest
+   * log if logStoreLimit is reached
+   */
   on(LogsActions.addLog, (state, { log }) =>
-    /**
-     * Add Log with generated id and remove oldest log if logCount is reached
-     */
     adapter.setAll(
       [
         ...Object.keys(state.entities)
           .map((key) => state.entities[key] as Log)
-          .slice(-state.logCount),
+          .slice(-state.logStoreLimit),
         {
           ...log,
           id: nanoid(),
@@ -47,5 +52,5 @@ export function reducer(state: LogsStoreState | undefined, action: Action) {
 }
 export const selectState = (state: LogsStoreState) => state;
 
-export const { selectEntities, selectAll, selectTotal } =
+export const { selectIds, selectEntities, selectAll, selectTotal } =
   adapter.getSelectors();

@@ -4,7 +4,7 @@ import { select, Store } from '@ngrx/store';
 import { selectRouteParam } from '@buhler/core/common-store';
 import { LogsActions } from '@buhler/machines/domain';
 import { ComponentStore } from '@ngrx/component-store';
-import { filter, Observable, tap, withLatestFrom } from 'rxjs';
+import { filter, map, Observable, tap, withLatestFrom } from 'rxjs';
 
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface MachineDetailPageState {}
@@ -12,11 +12,17 @@ export interface MachineDetailPageState {}
 @Injectable()
 export class MachineDetailPageStore extends ComponentStore<MachineDetailPageState> {
   readonly machineId$ = this.store$.pipe(select(selectRouteParam('machineId')));
+  readonly machineHeading$ = this.machineId$.pipe(
+    map((id) => `Machine Detail: ${id}`)
+  );
 
   constructor(private store$: Store<never>) {
     super({});
   }
 
+  /**
+   * Restarting machine to push it insto Running state
+   */
   readonly restartMachine = this.effect((input: Observable<never>) => {
     return input.pipe(
       withLatestFrom(this.machineId$),

@@ -9,6 +9,7 @@ const MachineSelector = createSelector(DomainSelector, (s) => s.machines);
 
 const loaded = createSelector(MachineSelector, (s) => s.loaded);
 const loading = createSelector(MachineSelector, (s) => s.loading);
+
 const allMachines = createSelector(MachineSelector, selectAll);
 
 export const MachinesSelectors = {

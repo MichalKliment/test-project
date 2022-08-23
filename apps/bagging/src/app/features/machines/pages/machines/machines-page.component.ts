@@ -12,7 +12,6 @@ export class MachinesPageComponent {
   ) {}
 
   navigateToDetail(id: string) {
-    console.log(id);
     this.router.navigate(['..', 'machines', id], {
       relativeTo: this.activatedRoute,
     });

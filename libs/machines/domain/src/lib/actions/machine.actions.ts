@@ -19,6 +19,12 @@ const changeMachineState = createAction(
   props<{ machine: Update<Machine> }>()
 );
 
+/**
+ * TODO: this action is not handled by the effect yet... 
+ * When  toast module is implemented, this action should
+ * be handled by the effect and show error toast
+ */
+
 const machineNotFond = createAction('[Machines] machine not found');
 
 export const MachinesActions = {

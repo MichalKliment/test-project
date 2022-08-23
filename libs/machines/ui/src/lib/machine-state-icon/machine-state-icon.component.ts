@@ -7,9 +7,10 @@ import { MachineState } from '@buhler/machines/utils';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MachineStateIconComponent {
-  materialIcon = '';
-
+  materialIcon = 'sync';
+  state: MachineState = 'Running';
   @Input() set icon(value: MachineState) {
+    this.state = value;
     switch (value) {
       case 'Running':
         this.materialIcon = 'sync';

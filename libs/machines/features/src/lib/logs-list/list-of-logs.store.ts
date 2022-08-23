@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { LogsSelectors } from '@buhler/machines/domain';
 import { ComponentStore } from '@ngrx/component-store';
 import { select, Store } from '@ngrx/store';
+import { parseISO } from 'date-fns';
 
 import { combineLatest, map, Observable, tap } from 'rxjs';
 
@@ -21,7 +22,13 @@ export class ListOfLogsStore extends ComponentStore<ListOfLogsState> {
     this.machineIdForFilter$,
   ]).pipe(
     map(([logs, machineIdForFilter]) =>
-      logs.filter((log) => log.machineId === machineIdForFilter)
+      logs
+        .filter((log) => log.machineId === machineIdForFilter)
+        .map((log) => ({
+          ...log,
+          createAt: parseISO(log.createdAt),
+        }))
+        .sort((a, b) => (a.createAt > b.createAt ? -1 : 1))
     )
   );
 
