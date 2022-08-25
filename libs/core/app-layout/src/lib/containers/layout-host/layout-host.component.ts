@@ -1,21 +1,21 @@
+import { TemplatePortal } from '@angular/cdk/portal';
 import {
   Component,
   Input,
   OnInit,
   TemplateRef,
   ViewChild,
-  ViewContainerRef,
+  ViewContainerRef
 } from '@angular/core';
-import { LayoutPortalEnum } from '../../model';
+import { LayoutPortalUnion } from '../../model';
 import { AppLayoutPortalService } from '../../services';
-import { TemplatePortal } from '@angular/cdk/portal';
 
 @Component({
   selector: 'buhler-layout-host',
   templateUrl: 'layout-host.component.html',
 })
 export class LayoutHostComponent implements OnInit {
-  @Input() portal: LayoutPortalEnum = 'main';
+  @Input() portal: LayoutPortalUnion = 'main';
 
   @ViewChild('template', { static: true })
   template: TemplateRef<never> | undefined;

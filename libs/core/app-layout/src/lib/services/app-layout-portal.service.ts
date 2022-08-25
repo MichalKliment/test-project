@@ -1,10 +1,10 @@
 import {
-  ComponentPortal,
-  DomPortal,
-  TemplatePortal
+    ComponentPortal,
+    DomPortal,
+    TemplatePortal
 } from '@angular/cdk/portal';
 import { Injectable } from '@angular/core';
-import { LayoutPortalEnum } from '../model';
+import { LayoutPortalUnion } from '../model';
 
 import { BehaviorSubject } from 'rxjs';
 
@@ -34,7 +34,7 @@ export class AppLayoutPortalService {
     this.main.next(portal);
   }
 
-  setPortal(portal: Portal, portalType: LayoutPortalEnum) {
+  setPortal(portal: Portal, portalType: LayoutPortalUnion) {
     switch (portalType) {
       case 'tabs':
         this.settTabs(portal);

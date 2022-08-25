@@ -1,1 +1,1 @@
-export type LayoutPortalEnum = 'main' | 'topBar' | 'tabs';
+export type LayoutPortalUnion = 'main' | 'topBar' | 'tabs';
